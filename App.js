@@ -8,8 +8,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MyHeader } from "./src/component/common/header";
 import MapScreen from "./src/component/map";
-import Modals from "./src/component/home/modal";
 import { MapInfoContext } from "./src/component/context/mapContext";
+import TestImg from "./src/component/map/testimg";
 
 function SettingsScreen() {
   return (
@@ -76,7 +76,7 @@ export default function App() {
             <Tab.Screen name="Home" component={Home} />
 
             <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={Modals} />
+            <Tab.Screen name="Settings" component={TestImg} />
           </Tab.Navigator>
         </NavigationContainer>
       </MapInfoContext>

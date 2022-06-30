@@ -1,4 +1,6 @@
-const dateArr = [
+import SelectDate from "./selectDate";
+
+const ticketDate = [
   "7/4",
   "7/5",
   "7/6",
@@ -16,4 +18,6 @@ const dateArr = [
   "7/18",
 ];
 
-export { dateArr };
+export default function Tickets() {
+  return <SelectDate dates={ticketDate} />;
+}

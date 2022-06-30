@@ -1,10 +1,12 @@
-import { Button } from "@rneui/themed";
-import { Ionicons, Octicons, Foundation, Feather } from "@expo/vector-icons";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { View, StyleSheet, Dimensions, Text, Image } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MyHeader } from "../common/header";
 import HomeScreen from "./homeScreen";
 import Hotels from "./hotels";
+import Planes from "./plane";
+import Tickets from "./tickets";
+import Trains from "./trains";
+import TicketDetail from "./ticketDetail";
 
 const Stack = createNativeStackNavigator();
 function DetailsScreen() {
@@ -40,9 +42,10 @@ export default function Home() {
         component={HomeScreen}
       />
       <Stack.Screen name="Hotels" component={Hotels} />
-      <Stack.Screen name="Ticket" component={DetailsScreen} />
-      <Stack.Screen name="Airplane" component={DetailsScreen} />
-      <Stack.Screen name="Train" component={DetailsScreen} />
+      <Stack.Screen name="Ticket" component={Tickets} />
+      <Stack.Screen name="Airplane" component={Planes} />
+      <Stack.Screen name="Train" component={Trains} />
+      <Stack.Screen name="TicketDetail" component={TicketDetail} />
     </Stack.Navigator>
   );
 }

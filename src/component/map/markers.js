@@ -4,7 +4,8 @@ import { CustomMarker, CustomCallout } from "./customs";
 import MapViewDirections from "react-native-maps-directions";
 import { MapContext } from "../context/mapContext";
 import { useContext } from "react";
-import { GOOGLE_API_KEY } from "../../constant/key";
+import { GOOGLE_API_KEY } from "../../constant/constants";
+
 function Markers() {
   const { setFitCoor, setIsPress, setModalVisible, setModalId } =
     useContext(MapContext);

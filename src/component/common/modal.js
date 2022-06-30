@@ -3,7 +3,7 @@ import { Alert, Modal, Text, StyleSheet, View, Pressable } from "react-native";
 import { Items } from "../map/customs";
 import { MapContext } from "../context/mapContext";
 
-export default function ModalView({ modalId }) {
+export default function ModalView({ modalId, navigation }) {
   const { modalVisible, setModalVisible } = useContext(MapContext);
   return (
     <Pressable>

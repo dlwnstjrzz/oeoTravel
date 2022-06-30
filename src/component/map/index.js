@@ -8,20 +8,13 @@ import Hotels from "../home/hotels";
 import ModalView from "../common/modal";
 import { MapContext } from "../context/mapContext";
 import Markers from "./markers";
-import { GOOGLE_API_KEY } from "../../constant/key";
+import { GOOGLE_API_KEY } from "../../constant/constants";
+
 const Stack = createNativeStackNavigator();
 
 const MapHome = ({ navigation }) => {
   const mapRef = useRef();
-  const {
-    modalId,
-    setModalId,
-    setModalVisible,
-    fitCoor,
-    setFitCoor,
-    isPress,
-    setIsPress,
-  } = useContext(MapContext);
+  const { modalId, fitCoor, isPress } = useContext(MapContext);
 
   return (
     <Container>
@@ -49,7 +42,7 @@ const MapHome = ({ navigation }) => {
             })
           : ""}
         <Markers />
-        <ModalView modalId={modalId} />
+        <ModalView modalId={modalId} navigation={navigation} />
       </MapView>
     </Container>
   );
