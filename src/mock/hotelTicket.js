@@ -1,0 +1,10 @@
+const hotelTicket = {
+  1: "HMRQD222N3",
+  3: "HMWSH4RNAA",
+  4: "HMMZJ3YHFE",
+  5: "HMMZJ3YHFE",
+  6: "HMMZJ3YHFE",
+  7: "HMMZJ3YHFE",
+  13: "HMCJMCTWEF",
+  16: "HMRBWBZFEZ",
+};

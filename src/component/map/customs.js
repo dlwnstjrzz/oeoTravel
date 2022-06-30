@@ -3,18 +3,49 @@
 import { Button } from "@rneui/themed";
 import Styled from "styled-components/native";
 import { View, Text } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function CustomCallout() {
+export function CustomMarker({ dayCount }) {
   return (
-    <CalloutWrapper>
-      <Items />
-    </CalloutWrapper>
+    <CustomMarkerWrapper>
+      <TextWrapper>
+        <Text
+          style={{
+            fontWeight: "700",
+            fontSize: 15,
+            color: "white",
+          }}
+        >
+          {` day${dayCount}`}
+        </Text>
+        <Ionicons name="chevron-forward-outline" size={20} color={"white"} />
+      </TextWrapper>
+      <Ionicons name="flag-outline" size={40} />
+    </CustomMarkerWrapper>
   );
 }
-
-const CalloutWrapper = Styled.View`
-  background-color: transparent;
+const TextWrapper = Styled.View`
+backgroundColor: black;
+borderRadius: 10;
+flex: 1;
+flexDirection: row;
+justify-content: space-between;
 `;
+const CustomMarkerWrapper = Styled.View`
+  margin-left: 30;
+  backgroundColor: transparent;
+  flex: 1;
+  alignItems: center;
+  flexDirection: column;
+  `;
+
+export function CustomCallout() {
+  return (
+    <View style={{ backgroundColor: "transparent" }}>
+      <Items />
+    </View>
+  );
+}
 
 export function Items({ onPressHandler }) {
   return (
@@ -27,8 +58,6 @@ export function Items({ onPressHandler }) {
         borderColor: "transparent",
         borderRadius: 10,
         backgroundColor: "#100f0f",
-
-        // height: 50,
         width: 135,
       }}
       containerStyle={{
