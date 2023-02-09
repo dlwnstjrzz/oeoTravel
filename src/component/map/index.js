@@ -28,19 +28,6 @@ const MapHome = ({ navigation }) => {
           })
         }
       >
-        {isPress
-          ? fitCoor.map((coors, idx) => {
-              return (
-                <MapViewDirections
-                  origin={coors}
-                  destination={fitCoor[idx + 1]}
-                  apikey={GOOGLE_API_KEY}
-                  strokeWidth={7}
-                  strokeColor="red"
-                />
-              );
-            })
-          : ""}
         <Markers />
         <ModalView modalId={modalId} navigation={navigation} />
       </MapView>

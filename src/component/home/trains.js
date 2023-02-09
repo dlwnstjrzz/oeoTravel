@@ -18,12 +18,6 @@ const trainDate = [
       require("../../../assets/ticket/train/interToGeneva-3.png"),
     ],
   },
-  // {date:"7/15", ticket:[]},
-  // "7/13",
-  // "7/14",
-  // "7/15",
-  // "716",
-  // "7/17",
   {
     date: "7/19",
     ticket: [

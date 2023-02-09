@@ -12,15 +12,15 @@ export function CustomMarker({ dayCount }) {
         <Text
           style={{
             fontWeight: "700",
-            fontSize: 15,
+            fontSize: 11,
             color: "white",
           }}
         >
           {` day${dayCount}`}
         </Text>
-        <Ionicons name="chevron-forward-outline" size={20} color={"white"} />
+        <Ionicons name="chevron-forward-outline" size={14} color={"white"} />
       </TextWrapper>
-      <Ionicons name="flag-outline" size={40} />
+      <Ionicons name="flag-outline" size={27} />
     </CustomMarkerWrapper>
   );
 }
@@ -32,7 +32,7 @@ flexDirection: row;
 justify-content: space-between;
 `;
 const CustomMarkerWrapper = Styled.View`
-  margin-left: 30;
+  margin-left: 22;
   backgroundColor: transparent;
   flex: 1;
   alignItems: center;
@@ -42,15 +42,15 @@ const CustomMarkerWrapper = Styled.View`
 export function CustomCallout() {
   return (
     <View style={{ backgroundColor: "transparent" }}>
-      <Items />
+      <Items title={"상세 보기"} />
     </View>
   );
 }
 
-export function Items({ onPressHandler }) {
+export function Items({ onPressHandler, title }) {
   return (
     <Button
-      title={<ItemCard />}
+      title={<ItemCard title={title} />}
       onPress={onPressHandler}
       titleStyle={{ fontWeight: "700", fontSize: 5 }}
       buttonStyle={{
@@ -76,7 +76,7 @@ export function Items({ onPressHandler }) {
   );
 }
 
-function ItemCard() {
+function ItemCard({ title }) {
   return (
     <View style={{ flexDirection: "column" }}>
       <Text
@@ -87,7 +87,7 @@ function ItemCard() {
           color: "white",
         }}
       >
-        상세 일정 보기
+        {title}
       </Text>
     </View>
   );

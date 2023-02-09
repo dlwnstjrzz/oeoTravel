@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { Alert, Modal, Text, StyleSheet, View, Pressable } from "react-native";
 import { Items } from "../map/customs";
 import { MapContext } from "../context/mapContext";
+import { schedule } from "../../mock/schedule";
 
-export default function ModalView({ modalId, navigation }) {
-  const { modalVisible, setModalVisible } = useContext(MapContext);
+export default function ModalView({ navigation }) {
+  const { modalVisible, setModalVisible, modalId } = useContext(MapContext);
   return (
     <Pressable>
       <Modal
@@ -12,18 +13,28 @@ export default function ModalView({ modalId, navigation }) {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>{modalId}</Text>
+            {schedule[modalId]?.map((scheduleInfo) => {
+              return (
+                <View>
+                  <Text
+                    style={styles.titleText}
+                  >{`day${scheduleInfo.day}`}</Text>
+                  <Text style={styles.modalText}>{scheduleInfo.content}</Text>
+                </View>
+              );
+            })}
+
             <Items
               onPressHandler={() => {
                 setModalVisible(!modalVisible);
                 navigation.navigate("detail");
               }}
+              title={"티켓 확인"}
             />
           </View>
         </View>
@@ -37,7 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22,
   },
   modalView: {
     margin: 20,
@@ -58,5 +68,13 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+    lineHeight: 20,
+  },
+  titleText: {
+    fontWeight: "bold",
+    fontSize: 15,
+    marginBottom: 5,
+    textAlign: "center",
+    lineHeight: 20,
   },
 });

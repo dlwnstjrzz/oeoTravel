@@ -3,15 +3,21 @@ import { Marker, Callout } from "react-native-maps";
 import { CustomMarker, CustomCallout } from "./customs";
 import MapViewDirections from "react-native-maps-directions";
 import { MapContext } from "../context/mapContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GOOGLE_API_KEY } from "../../constant/constants";
 
 function Markers() {
-  const { setFitCoor, setIsPress, setModalVisible, setModalId } =
-    useContext(MapContext);
+  const {
+    isPress,
+    setFitCoor,
+    setIsPress,
+    setModalVisible,
+    setModalId,
+    modalId,
+  } = useContext(MapContext);
 
   return markers.map((marker, markerIdx) => {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    const randomColor = "#" + Math.round(Math.random() * 0xffffff).toString(16);
     return marker.latLng.map((coor, coorIdx) => {
       return (
         <>
@@ -22,6 +28,7 @@ function Markers() {
               onPress={() => {
                 setFitCoor(marker.latLng);
                 setIsPress(true);
+                setModalId(markerIdx);
               }}
             >
               <CustomMarker dayCount={marker.dayCount} />
@@ -43,8 +50,8 @@ function Markers() {
             origin={coor}
             destination={marker.latLng[coorIdx + 1]}
             apikey={GOOGLE_API_KEY}
-            strokeWidth={3}
-            strokeColor={"black"}
+            strokeWidth={modalId === markerIdx ? 10 : 3}
+            strokeColor={modalId === markerIdx ? "red" : "black"}
           />
         </>
       );
