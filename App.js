@@ -9,7 +9,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MyHeader } from "./src/component/common/header";
 import MapScreen from "./src/component/map";
 import { MapInfoContext } from "./src/component/context/mapContext";
-import TestImg from "./src/component/map/testimg";
 
 function SettingsScreen() {
   return (
@@ -76,7 +75,7 @@ export default function App() {
             <Tab.Screen name="Home" component={Home} />
 
             <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={TestImg} />
+            <Tab.Screen name="Settings" component={Home} />
           </Tab.Navigator>
         </NavigationContainer>
       </MapInfoContext>
