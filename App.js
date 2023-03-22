@@ -1,25 +1,13 @@
 import * as React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Home, Map } from "./src/pages";
 import { Ionicons, Octicons, Foundation, Feather } from "@expo/vector-icons";
-import Home from "./src/component/home";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { MyHeader } from "./src/component/common/header";
-import MapScreen from "./src/component/map";
-import { MapInfoContext } from "./src/component/context/mapContext";
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import { MyHeader } from "./src/component";
+import { MapInfoContext } from "./src/context/mapContext";
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
@@ -57,14 +45,12 @@ export default function App() {
                   } else {
                     return <Foundation name="home" size={24} color={color} />;
                   }
-                  // iconName = focused ? "home" : "ios-information-circle-outline";
                 } else if (route.name === "Settings") {
                   iconName = "settings-outline";
                 } else if (route.name === "Map") {
                   return <Feather name="map-pin" size={24} color={color} />;
                 }
 
-                // You can return any component that you like here!
                 return <Ionicons name={iconName} size={size} color={color} />;
               },
               tabBarActiveTintColor: "white",
@@ -73,8 +59,7 @@ export default function App() {
             })}
           >
             <Tab.Screen name="Home" component={Home} />
-
-            <Tab.Screen name="Map" component={MapScreen} />
+            <Tab.Screen name="Map" component={Map} />
             <Tab.Screen name="Settings" component={Home} />
           </Tab.Navigator>
         </NavigationContainer>
