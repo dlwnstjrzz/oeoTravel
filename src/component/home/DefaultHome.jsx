@@ -1,13 +1,13 @@
 import { Button } from "@rneui/themed";
-import { View, StyleSheet, Dimensions } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { useId } from "react";
-import { buttonArr } from "../../mock/buttons";
+import { buttonData } from "../../constants/constants";
 
-export default function HomeScreen({ navigation }) {
+export default function DefaultHome({ navigation }) {
   return (
     <View style={styles.homeScreen}>
       <View style={styles.homeButtons}>
-        {buttonArr.map((info, idx) => {
+        {buttonData.map((info, idx) => {
           const key = useId();
 
           return (
