@@ -18,7 +18,7 @@ export const schedule = {
   2: [
     {
       day: 4,
-      content: `뮌헨 시가지 조지고\n12:05 ~ 13:40 뮌헨에서 파리 이동`,
+      content: `뮌헨 시가지 \n12:05 ~ 13:40 뮌헨에서 파리 이동`,
     },
   ],
   3: [
@@ -42,7 +42,7 @@ export const schedule = {
   4: [
     {
       day: 9,
-      content: `융프라우 정상에서 만원내고 신라면 개같이 먹방\n협곡 캐녀닝`,
+      content: `융프라우 정상에서 만원내고 신라면 먹방\n협곡 캐녀닝`,
     },
     {
       day: 10,

@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { maxCoor } from "../../mock/latLng";
+import { maxCoor } from "../mock/latLng";
 
 const MapContext = createContext(null);
 

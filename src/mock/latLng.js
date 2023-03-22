@@ -27,19 +27,6 @@ export const markers = [
     ],
     dayCount: "1~2",
   },
-  // {
-  //   latLng: [
-  //     {
-  //       latitude: 50.13397849079889,
-  //       longitude: 8.675452517221721,
-  //     },
-  //     {
-  //       latitude: 48.40882253300604, //울름
-  //       longitude: 9.983372156252738,
-  //     },
-  //   ],
-  //   dayCount: 2,
-  // },
   {
     latLng: [
       {
@@ -87,19 +74,6 @@ export const markers = [
     ],
     dayCount: "5~8",
   },
-  // {
-  //   latLng: [
-  //     {
-  //       latitude: 48.867855388867135, //파리
-  //       longitude: 2.355466949847367,
-  //     },
-  //     {
-  //       latitude: 46.68948166641295, //인터라켄
-  //       longitude: 7.861037347442451,
-  //     },
-  //   ],
-  //   dayCount: 8,
-  // },
   {
     latLng: [
       {
