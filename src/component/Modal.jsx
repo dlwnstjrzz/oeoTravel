@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Alert, Modal, Text, StyleSheet, View, Pressable } from "react-native";
-import { Items } from "../map/customs";
+import { Modal, Text, StyleSheet, View, Pressable } from "react-native";
+import { Items } from "./map/customs";
 import { MapContext } from "../context/mapContext";
-import { schedule } from "../../mock/schedule";
+import { schedule } from "../mock/schedule";
 
 export default function ModalView({ navigation }) {
   const { modalVisible, setModalVisible, modalId } = useContext(MapContext);
