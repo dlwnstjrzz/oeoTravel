@@ -1,12 +1,12 @@
 import { markers } from "../../mock/latLng";
 import { Marker, Callout } from "react-native-maps";
-import { CustomMarker, CustomCallout } from "./customs";
+import { CustomCallout, CustomMarker } from "./customs";
 import MapViewDirections from "react-native-maps-directions";
-import { MapContext } from "../context/mapContext";
-import { useContext, useState } from "react";
-import { GOOGLE_API_KEY } from "../../constant/constants";
+import { MapContext } from "../../context/mapContext";
+import { useContext } from "react";
+import { GOOGLE_API_KEY } from "../../constants/constants";
 
-function Markers() {
+export default function Markers() {
   const {
     isPress,
     setFitCoor,
@@ -58,5 +58,3 @@ function Markers() {
     });
   });
 }
-
-export default Markers;
