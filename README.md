@@ -1,4 +1,6 @@
 # 여행 어플 oeo Travel✈️
+### !!리팩토링 진행중!!
+[리팩토링 진행상황 정리 글](https://velog.io/@dlwnstjrzz/여행-어플-리팩토링)
 ## 1. 사용한 기술 스택
 <img src="https://img.shields.io/badge/React native-00ffff?style=for-the-badge&logo=React&logoColor=white">&nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/badge/Google Maps-4285F4?style=for-the-badge&logo=Google Maps&logoColor=white">&nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/badge/Styled components-DB7093?style=for-the-badge&logo=Styled-components&logoColor=white">
 
